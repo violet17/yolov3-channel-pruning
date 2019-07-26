@@ -22,28 +22,6 @@ def scale_gammas(sr_flag, alpha, model, prune_idx, scale_down=True):
             nnlist[idx][1].weight.data.mul(alpha)
         
 
-        '''
-        for i in range(len(nnlist)):
-            for name in nnlist[i].named_children():
-                if "_".join(name[0].split("_")[0:-1]) == 'conv_with_bn':
-                    name[1].weight.data =  name[1].weight.data * alpha_
-                    #print(name[0])
-                elif "_".join(name[0].split("_")[0:-1]) == 'batch_norm':
-                    name[1].weight.data =  name[1].weight.data * alpha
-                    #print(name[0])
-        return model
-        '''
-    
-
-
-#class BNOptimizer():
-#    def updateBN(self, sr_flag, module_list, s, prune_idx):
-#        if sr_flag:
-#            for idx in prune_idx:
-#               module_list[idx][1].weight.grad.data.add_(s * torch.sign(module_list[idx][1].weight.data)) 
-            #for m in module_list:
-            #    if isinstance(m, nn.BatchNorm2d):
-            #        m.weight.grad.data.add_(s*torch.sign(m.weight.data))  # L1
 
 def updateBN(sr_flag, module_list, s, prune_idx):
     if sr_flag:
@@ -87,16 +65,7 @@ def obtain_bn_mask(bn_module, thre):
         mask[int(torch.argmax(weight_copy))] = 1.0
         print("mask is  0")
     return mask
-'''
-def prune_model_keep_size(model, prune_idx, CBL_idx, CBLidx2mask):
-    pruned_model = deepcopy(model)
-    for idx in CBL_idx:
-        bn_module = pruned_model.module_list[idx][1]
-        if idx in prune_idx:
-            mask = torch.from_numpy(CBLidx2mask[idx]).to(device)
-            bn_module.weight.data.mul_(mask)
-    return pruned_model
-    '''
+
 def prune_model_keep_size(model, prune_idx, CBL_idx, CBLidx2mask):
     pruned_model = deepcopy(model)
     for idx in CBL_idx:
