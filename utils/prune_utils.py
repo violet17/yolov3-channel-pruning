@@ -18,8 +18,8 @@ def scale_gammas(sr_flag, alpha, model, prune_idx, scale_down=True):
             alpha = 1/alpha
         nnlist = model.module_list
         for idx in prune_idx:
-            nnlist[idx][0].weight.data.mul(alpha_)
-            nnlist[idx][1].weight.data.mul(alpha)
+            nnlist[idx][0].weight.data.mul_(alpha_)
+            nnlist[idx][1].weight.data.mul_(alpha)
         
 
 
