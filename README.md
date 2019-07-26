@@ -34,7 +34,7 @@ pip install terminaltables
 
 
 # Reference: 
-[YOLOv3-model-pruning](https://github.com/Lam1360/YOLOv3-model-pruning)
+[YOLOv3-model-pruning](https://github.com/Lam1360/YOLOv3-model-pruning)（感谢Lam1360给了很多帮助）
 
 [yolov3-network-slimming](https://github.com/talebolano/yolov3-network-slimming)
            
