@@ -34,8 +34,11 @@ pip install terminaltables
 
 # Run
 ```python train.py --model_def config/yolov3.cfg```
+
 ```python train.py --model_def config/yolov3.cfg -sr```
+
 ```python test_prune.py```
+
 ```python train.py --model_def config/prune_yolov3.cfg -pre checkpoints/prune_yolov3_ckpt.pth```
 
 
