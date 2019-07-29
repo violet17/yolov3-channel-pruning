@@ -5,6 +5,8 @@ import torch.nn.functional as F
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def get_sr_flag(epoch,sr):
+     if epoch > 10:
+          return not sr
      return sr
 
 def scale_gammas(sr_flag, alpha, model, prune_idx, scale_down=True):
