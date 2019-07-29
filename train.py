@@ -139,7 +139,8 @@ if __name__ == "__main__":
             optimizer.zero_grad()
             loss.backward()
 
-            BNOptimizer.updateBN(sr_flag, model.module_list, opt.s, prune_idx)
+            updateBN(sr_flag, model.module_list, opt.s, prune_idx)
+            #BNOptimizer.updateBN(sr_flag, model.module_list, opt.s, prune_idx)
 
             optimizer.step()
 
