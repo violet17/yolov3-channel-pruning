@@ -32,6 +32,13 @@ pip install terminaltables
 + matplotlib
 + .......
 
+# Run
+`python train.py --model_def config/yolov3.cfg`
+`python train.py --model_def config/yolov3.cfg -sr`
+`python test_prune.py`
+`python train.py --model_def config/prune_yolov3.cfg -pre checkpoints/prune_yolov3_ckpt.pth`
+
+
 
 # Reference: 
 [YOLOv3-model-pruning](https://github.com/Lam1360/YOLOv3-model-pruning)（感谢Lam1360给了很多帮助）
