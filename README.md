@@ -41,7 +41,7 @@ pip install terminaltables
 
 ```python train.py --model_def config/prune_yolov3.cfg -pre checkpoints/prune_yolov3_ckpt.pth```
 
-
+![](https://github.com/violet17/yolov3-channel-pruning/blob/master/bn_weights_hist.png?raw=true)
 
 # Reference: 
 [YOLOv3-model-pruning](https://github.com/Lam1360/YOLOv3-model-pruning)（感谢Lam1360给了很多帮助）
