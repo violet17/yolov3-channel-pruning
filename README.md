@@ -1,7 +1,7 @@
 # yolov3-channel-pruning
 # Update:
 补充prune_utils.py. 
-在自己的数据集上，剪枝30%mAP不变。
+在自己的数据集上，剪枝30%-50%, mAP不变。
 
 
 
